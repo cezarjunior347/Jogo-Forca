@@ -59,7 +59,7 @@ def inicializa_letras_acertadas(palavra): # retorna o numero de caracteres da pa
 
 
 def carrega_palavra_secreta(grupo): #passar o grupo escolhido
-    arquivo = open("Jogo_forca/palavras.txt", "r")
+    arquivo = open("palavras.txt", "r")
     palavras_grupo = []
 
     for linha in arquivo:
