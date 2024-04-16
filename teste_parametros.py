@@ -12,12 +12,14 @@ def index():
 def escolher_grupo():
     grupo_escolhido = request.form.get("grupo")
     dificuldade_escolhida = request.form.get("dificuldade")
+    jogador = request.form.get('nome')
     palavra_secreta = carrega_palavra_secreta(grupo_escolhido)
     letras_acertadas = inicializa_letras_acertadas(palavra_secreta)
     session['palavra_secreta'] = palavra_secreta
     session['letras_acertadas'] = letras_acertadas
     session['grupo_escolhido'] = grupo_escolhido
     session['dificuldade_escolhida'] = dificuldade_escolhida
+    session['jogador'] = jogador
     erros = 0
     session['erros'] = erros
 
@@ -29,6 +31,7 @@ def escolher_grupo():
                                         , letras_acertadas=letras_acertadas
                                         , titulo="Jogo Forca"
                                         , erros=erros
+                                        , jogador=jogador
                             )
 
 
@@ -42,6 +45,7 @@ def jogar():
     letras_acertadas = session.get('letras_acertadas', None)
     grupo_escolhido = session.get('grupo_escolhido', None)
     dificuldade_escolhida = session.get('dificuldade_escolhida', None)
+    jogador = session.get('jogador', None)
     max_erros = nivel_dificuldade(dificuldade_escolhida)
     
     if(chute in palavra_secreta):
@@ -51,10 +55,10 @@ def jogar():
         session['erros'] = erros
     if session['erros'] >= max_erros:
         enforcou = True
-        return render_template('encerramento.html', resultado="DERROTA") #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
+        return render_template('encerramento.html', resultado="DERROTA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
     if "_" not in letras_acertadas:
         acertou = True
-        return render_template('encerramento.html', resultado="VITORIA") #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
+        return render_template('encerramento.html', resultado="VITORIA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
     return render_template('jogo.html', titulo="Jogo Forca"
                                         , grupo_escolhido=grupo_escolhido
                                         , dificuldade_escolhida=dificuldade_escolhida

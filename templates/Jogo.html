@@ -12,7 +12,9 @@
         <div class="page-header">
             <h1>{{ titulo }}</h1>
         </div>
-        <br>    
+        <br>
+        <label >Jogador: {{jogador}}</label>
+        <br><br>    
         <label >Grupo Palavra: {{ grupo_escolhido }}</label>
         <br><br>
         <label >Dificuldade: {{ dificuldade_escolhida }}</label>
@@ -28,7 +30,7 @@
         <label >Enforcou: {{enforcou}}</label>
         <br><br>
         <label >Acertou: {{acertou}}</label>
-        <br><br>
+        <br><br>        
     </div>
     <form action="/jogar" method="post">
         <label>Letras: </label><br><br>
