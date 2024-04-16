@@ -51,8 +51,10 @@ def jogar():
         session['erros'] = erros
     if session['erros'] >= max_erros:
         enforcou = True
+        return render_template('encerramento.html', resultado="DERROTA") #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
     if "_" not in letras_acertadas:
         acertou = True
+        return render_template('encerramento.html', resultado="VITORIA") #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
     return render_template('jogo.html', titulo="Jogo Forca"
                                         , grupo_escolhido=grupo_escolhido
                                         , dificuldade_escolhida=dificuldade_escolhida
