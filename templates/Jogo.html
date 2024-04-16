@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo Forca</title>
+    <link rel="stylesheet" href="../static/bootstrap.css">
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ titulo }}</h1>
+        </div>
+        <br>    
+        <label >Grupo Palavra: {{ grupo_escolhido }}</label>
+        <br><br>
+        <label >Dificuldade: {{ dificuldade_escolhida }}</label>
+        <br><br>
+        <label >Palavra secreta: {{palavra_secreta}}</label>
+        <br><br>
+        <label >Letras: {{letras_palavra}}</label>
+        <br><br>
+        <label >Erros: {{erros}}</label>
+        <br><br>
+        <label >Letra: {{letra}}</label>
+        <br><br>
+        <label >Enforcou: {{enforcou}}</label>
+        <br><br>
+        <label >Acertou: {{acertou}}</label>
+        <br><br>
+    </div>
+    <form action="/jogar" method="post">
+        <label>Letras: </label><br><br>
+        <button type="submit" name="letra" value="A">A</button>
+        <button type="submit" name="letra" value="B">B</button>
+        <button type="submit" name="letra" value="C">C</button>
+        <button type="submit" name="letra" value="D">D</button>
+        <button type="submit" name="letra" value="E">E</button><br>
+        <button type="submit" name="letra" value="F">F</button>
+        <button type="submit" name="letra" value="G">G</button>
+        <button type="submit" name="letra" value="H">H</button>
+        <button type="submit" name="letra" value="I">I</button>
+        <button type="submit" name="letra" value="J">J</button><br>
+        <button type="submit" name="letra" value="K">K</button>
+        <button type="submit" name="letra" value="L">L</button>
+        <button type="submit" name="letra" value="M">M</button>
+        <button type="submit" name="letra" value="N">N</button>
+        <button type="submit" name="letra" value="O">O</button><br>
+        <button type="submit" name="letra" value="P">P</button>
+        <button type="submit" name="letra" value="Q">Q</button>
+        <button type="submit" name="letra" value="R">R</button>
+        <button type="submit" name="letra" value="S">S</button>
+        <button type="submit" name="letra" value="T">T</button><br>
+        <button type="submit" name="letra" value="U">U</button>
+        <button type="submit" name="letra" value="V">V</button>
+        <button type="submit" name="letra" value="W">W</button>
+        <button type="submit" name="letra" value="X">X</button>
+        <button type="submit" name="letra" value="Y">Y</button><br>
+        <button type="submit" name="letra" value="Z">Z</button>
+        <button type="submit" name="letra" value=" ">Espaço</button>
+    </form>
+  </body>
+</html>

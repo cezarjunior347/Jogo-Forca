@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo</title>
+    <link rel="stylesheet" href="../static/bootstrap.css">
+
+  </head>
+  <body>
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ titulo }}</h1>
+        </div>
+        <br>
+        <form action="/iniciar" method="post">
+            <label>Grupo: </label><br>
+            <input type="radio" id="automovel" name="grupo" value="AUTOMOVEL">
+            <label for="automovel">AUTOMOVEL</label><br>
+            <input type="radio" id="filmes" name="grupo" value="FILMES">
+            <label for="filmes">FILME</label><br>
+            <input type="radio" id="frutas" name="grupo" value="FRUTAS">
+            <label for="frutas">FRUTA</label><br>
+            <br><br>
+            <label >Dificuldade: </label><br>
+            <input type="radio" id="facil" name="dificuldade" value="FACIL">
+            <label for="facil">FACIL</label><br>
+            <input type="radio" id="medio" name="dificuldade" value="MEDIO">
+            <label for="medio">MEDIO</label><br>
+            <input type="radio" id="dificil" name="dificuldade" value="DIFICIL">
+            <label for="dificil">DIFICIL</label><br>
+            <br><br>
+            <button type="submit" name="iniciar">INICIAR</button>
+        </form>        
+        <br><br>
+        <label >Ranking: Nome - Status - Palavra - Pontuação</label>
+        
+    </div>
+  </body>
+</html>
