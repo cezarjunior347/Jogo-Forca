@@ -67,7 +67,7 @@ def jogar():
 
 
 def carrega_palavra_secreta(grupo_escolhido): #passar o grupo escolhido
-    arquivo = open("Jogo_forca/palavras.txt", "r")
+    arquivo = open("palavras.txt", "r")
     palavras_grupo = []
 
     for linha in arquivo:
