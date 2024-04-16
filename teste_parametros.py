@@ -58,7 +58,7 @@ def jogar():
         return render_template('encerramento.html', resultado="DERROTA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
     if "_" not in letras_acertadas:
         acertou = True
-        return render_template('encerramento.html', resultado="VITORIA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM DERROTA (PONTOS, NOME JOGADOR, COLOCACAO)
+        return render_template('encerramento.html', resultado="VITORIA", jogador=jogador) #CARREGAR POPUP COM A MENSAGEM VITORIA (PONTOS, NOME JOGADOR, COLOCACAO)
     return render_template('jogo.html', titulo="Jogo Forca"
                                         , grupo_escolhido=grupo_escolhido
                                         , dificuldade_escolhida=dificuldade_escolhida
